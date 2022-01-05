@@ -50,12 +50,12 @@ class ResumeAPI(CreateAPIView):
     Achievements = []
     Projects = []
     Other = []
-    links=[]
+    links = []
     DOB=[]
     
     reader = e.Reader(['en'])
     images = (pdf2image.convert_from_path(req_file, 
-      poppler_path=r'C:\Program Files\poppler-0.68.0\bin'))
+      poppler_path=r'poppler-0.68.0\bin'))
       
     for i in range(0,len(images)):
         bounds.append(reader.readtext(np.array(images[i]), min_size=0,
